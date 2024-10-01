@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Add Contact</title>
+</head>
+<body>
+	<section>
+		<div class="card mr-3 ml-3">
+			<div class="card-body">
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+						
+							<h1 class="text-center">Add Contact</h1>
+							
+							<form action="#" th:object="${contact}"
+								enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-contact}" class="mt-2">
+								
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa-solid fa-plus"></i>
+										</div>
+									</div>
+									<input type="text" name="firstName" class="form-control"
+										id="firstName" placeholder="Enter your first name"
+										th:classappend="${#fields.hasErrors('firstName') ? 'is-invalid' : ''}"
+										required>
+										
+									<div class="invalid-feedback" th:each="e : ${#fields.errors('*{firstName}')}" th:text="${e}"></div>
+								</div>
+								
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa-solid fa-plus"></i>
+										</div>
+									</div>
+									<input type="text" name="lastName" class="form-control"
+										id="lastName" placeholder="Enter your last name"
+										th:classappend="${#fields.hasErrors('lastName') ? 'is-invalid' : ''}"
+										required>
+										
+									<div class="invalid-feedback" th:each="e : ${#fields.errors('*{lastName}')}" th:text="${e}"></div>
+								</div>
+								
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa-solid fa-briefcase"></i>
+										</div>
+									</div>
+									<input type="text" name="work" class="form-control"
+										id="work" placeholder="Enter your work here"
+										required>
+								</div>
+								
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa-solid fa-envelope"></i>
+										</div>
+									</div>
+									<input type="email" name="email" class="form-control"
+										id="email" placeholder="Enter your email address"
+										required>
+								</div>
+								
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa-solid fa-phone"></i>
+										</div>
+									</div>
+									<input type="phone" name="phone" class="form-control"
+										id="phone" placeholder="Enter your phone number"
+										required>
+								</div>
+								
+								<div class="input-group mb-2">
+									<textarea class="form-control" name="description" id="description" 
+										rows="8" cols="20" placeholder="Enter contact description here"
+										required></textarea>
+								</div>
+								
+								<div class="custom-file">
+									<input  type="file" name="profileImage"/>
+								</div>
+								
+								<div class="container text-center mt-2">
+									<button class="btn btn-outline-primary" value="submit">Submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script>
+			$(document).ready(() => {
+				$(".item").removeClass("active");
+				$("#add-contact-link").addClass("active");
+			});
+		</script>
+		<!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+		        selector: '#description'
+		      });
+		</script> -->
+		
+	</section>
+</body>
+</html>
