@@ -55,11 +55,22 @@ Users can register and log in to the website to access their personal dashboard.
 
 - Create a MySQL Database - `contactmanager`
 - Chnage you mail address and password in `application.properties`
-  
+
+
 
 ## Running the Application
 
 1. To run the application, open the application in IDE 
 
 2. The application should now be running at `http://localhost:8080`.
+
+## Preview
+![Admin Dashboard](https://github.com/user-attachments/assets/398aeba0-70ed-4c33-863e-9c24b3970f45)
+![Add Contacts](https://github.com/user-attachments/assets/05abec26-5ea4-4e11-8b7d-a46e127ae9bd)
+![Home Page](https://github.com/user-attachments/assets/914c7d3e-a4fe-44cd-a87f-35ec95cd30ff)
+![Admin Profile Settings ](https://github.com/user-attachments/assets/7054db39-afd9-452f-835f-5ddff703e269)
+![Admin Profile ](https://github.com/user-attachments/assets/ff823238-67a6-441f-a7ce-e85a1d7861b0)
+![Admin Login Page](https://github.com/user-attachments/assets/d8247efa-2b13-46dd-a9ea-ca40a5febd39)
+
+
 
